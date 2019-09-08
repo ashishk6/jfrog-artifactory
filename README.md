@@ -4,7 +4,7 @@
 
 -- Steps to Bring up the Jenkins and JFrog Applications:
 - Write a docker compose file keepping both the Application services under same network.
-- For more details please refer the Docker-compose.json
+- For more details please refer the docker-compose.json
 - Here we will create Docker Swarm to run this compose file:
  -- docker swarm init --advertise-addr <localhost IP>
  -- docker stack deploy -c docker-compose.json <stack name>
@@ -12,7 +12,7 @@
 
 > To get the Jenkins initialAdminPassword use the below command  
 
-  - docker exec <jenkins process id> cat /var/jenkins_home/secrets/initialAdminPassword
+  - docker exec jenkins_process_id cat /var/jenkins_home/secrets/initialAdminPassword
   - Create a Generic Artifact repository Sample1 in JFrog and use the below Jenkins pipeline script to upload a sample file into the repository.
  >touch sample-test.txt
 echo "hello world" >> sample-test.txt
